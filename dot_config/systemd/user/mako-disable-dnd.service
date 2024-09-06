@@ -1,0 +1,4 @@
+[Service]
+Type=oneshot
+RemainAfterExit=no
+ExecStart=/usr/bin/makoctl mode -r do-not-disturb
