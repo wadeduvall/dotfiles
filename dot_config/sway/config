@@ -24,6 +24,7 @@ input * {
 
 input type:touchpad {
     tap disabled
+    tap enabled
     # tap_button_map lrm
     dwt enabled
     click_method clickfinger
@@ -72,9 +73,9 @@ set $power waylogout \
       --indicator-thickness 7 \
       --lock-command="$lock" \
       --logout-command="swaymsg exit" \
-      --suspend-command="systemctl suspend-then-hibernate" \
+      --suspend-command="systemctl suspend" \
       --hibernate-command="systemctl hibernate" \
-      --poweroff-command="systemctl shutdown" \
+      --poweroff-command="systemctl poweroff" \
       --reboot-command="systemctl reboot" \
       --selection-label
 
@@ -101,6 +102,7 @@ bindgesture swipe:right workspace prev
 bindgesture swipe:left workspace next
 
 # for_window [app_id="darktable"] floating enable
+for_window [app_id="wsjtx"] floating enable
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

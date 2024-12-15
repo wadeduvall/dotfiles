@@ -6,6 +6,7 @@ SETUVAR --export EDITOR:/home/wsduvall/\x2elocal/share/bob/nvim\x2dbin/nvim
 SETUVAR --export EZA_COLORS:di\x3d38\x3b5\x3b33
 SETUVAR --export PAGER:less
 SETUVAR --export TMUX:1
+SETUVAR --export WINEARCH:win32
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr
