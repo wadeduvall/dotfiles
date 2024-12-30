@@ -103,6 +103,7 @@ bindgesture swipe:left workspace next
 
 # for_window [app_id="darktable"] floating enable
 for_window [app_id="wsjtx"] floating enable
+for_window [app_id="org.freecad.FreeCAD"] floating enable
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
