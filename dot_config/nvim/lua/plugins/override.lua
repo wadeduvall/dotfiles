@@ -12,7 +12,41 @@ return {
     -- use opts = {} for passing setup options
     -- this is equivalent to setup({}) function
   },
-  -- add any tools you want to have installed below
+  {
+    "nvim-treesitter/nvim-treesitter",
+    ---@type TSConfig
+    ---@diagnostic disable-next-line: missing-fields
+    opts = {
+      ensure_installed = {
+        "rust",
+      },
+      incremental_selection = {
+        keymaps = {
+          init_selection = "<leader>a",
+          node_incremental = "<leader>a",
+          scope_incremental = false,
+          node_decremental = "<bs>",
+        },
+      },
+    },
+  },
+
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    vscode = true,
+    ---@type Flash.Config
+    opts = {},
+    -- stylua: ignore
+    keys = {
+      { "<leader>h", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      { "<leader>H", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "<leader>r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+      { "<leader>R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    },
+  },
+
   {
     "williamboman/mason.nvim",
     opts = {
